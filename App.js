@@ -61,7 +61,7 @@ export default function App() {
           style={styles.button}
           onPress={() => sortearDados()}
         >
-          <Ionicons name="dice" size={24} color="#edf2f4" />
+          <Ionicons name="dice" size={24} color="#FFFFFF" />
           <Text style={styles.text}>Sortear</Text>-
         </TouchableOpacity>
 
@@ -84,19 +84,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EDF2F4',
+    backgroundColor: '#212121',
 
   },
   titlecontainer: {
     alignItems:'center',
     justifyContent: 'flex-end',
     height: 130,
-    backgroundColor: '#D90429',
+    backgroundColor: '#FFFFFF',
     borderBottomStartRadius: 25,
     borderBottomEndRadius: 25,
   },
   title:{
-    color:'#EDF2F4',
+    color:'#212121',
     fontSize: 28,
     fontWeight:'bold',
     marginBottom: 30,
@@ -105,25 +105,25 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 40,
     width:'100%',
-    backgroundColor:'EDF2F4'
+    backgroundColor:'FFEB3B'
     
   },
   subtitle:{
     textAlign: 'center',
     fontSize: 24,
-    color:'#D90429',
+    color:'#FFFFFF',
     fontWeight:'bold',
     marginBottom: 40,
   },
   label:{
-    color: '#000',
+    color: '#FFFFFF',
     fontSize: 18,
   },
   input:{
     height: 45,
     width:'100%',
     fontSize: 18,
-    borderColor: '#D90429',
+    borderColor: '#FFEB3B',
     borderBottomWidth: 1,
   },
 
@@ -133,13 +133,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ef233c',
+    backgroundColor: '#4169E1',
     borderRadius: 15,
     marginTop: 40,
     marginbottom: 10,
   },
   text: {
-    color: '#edf2f4',
+    color: '#FFEB3B',
     fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 5,
