@@ -27,6 +27,12 @@ export default function App() {
     }
   }
 
+  function removerDado(index) {
+    const novaLista = resultados.filter((_, i) => i !== index);
+    setResultados(novaLista);
+  }
+  
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titlecontainer}>
@@ -61,8 +67,8 @@ export default function App() {
           style={styles.button}
           onPress={() => sortearDados()}
         >
-          <Ionicons name="dice" size={24} color="#FFFFFF" />
-          <Text style={styles.text}>Sortear</Text>-
+          <Ionicons name="dice" size={24} color="#212121" />
+          <Text style={styles.text}>Sortear</Text>
         </TouchableOpacity>
 
         <View style={styles.resultadosContainer}>
@@ -70,7 +76,15 @@ export default function App() {
           {resultados.length > 0 && (
             <View style={styles.resultadosList}>
               {resultados.map((resultado, index) => (
-                <Text key={index} style={styles.resultadoItem}>Dado {index + 1}: {resultado}</Text>
+                <View key={index} style={styles.resultadoItemContainer}>
+                  <Text style={styles.resultadoItem}>Dado {index + 1}: {resultado}</Text>
+                  <TouchableOpacity 
+                    style={styles.removerButton} 
+                    onPress={() => removerDado(index)}
+                  >
+                    <Ionicons name="trash" size={20} color="white" />
+                  </TouchableOpacity>
+                </View>
               ))}
             </View>
           )}
@@ -125,6 +139,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     borderColor: '#FFEB3B',
     borderBottomWidth: 1,
+    color: '#FFFFFF',
   },
 
   button: {
@@ -133,13 +148,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#4169E1',
+    backgroundColor: '#FFFFFF',
     borderRadius: 15,
     marginTop: 40,
     marginbottom: 10,
   },
   text: {
-    color: '#FFEB3B',
+    color: '#212121',
     fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 5,
@@ -152,7 +167,7 @@ const styles = StyleSheet.create({
   },
   resultadosText: {
     fontSize: 18,
-    color: '#ef233c',
+    color: '#FFEB3B',
     fontWeight: 'bold',
   },
   resultadosList: {
@@ -160,8 +175,26 @@ const styles = StyleSheet.create({
   },
   resultadoItem: {
     fontSize: 18,
-    color: '#ef233c',
+    color: '#FFFFFF',
     fontWeight: 'bold',
     marginVertical: 5,
   },
+
+  resultadoItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#333',
+    padding: 10,
+    borderRadius: 10,
+    marginVertical: 5,
+    width: '100%',
+  },
+  
+  removerButton: {
+    backgroundColor: 'red',
+    padding: 8,
+    borderRadius: 5,
+  },
+  
 })
